@@ -3,89 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng Nhập Facebook</title>
+    <title>Đăng nhập Facebook</title>
+    <style>
+
+        /* Tag selector */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+            color: #1c1e21;
+        }
+
+        h1{
+            color: #1877f2;
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        h2{
+            font-size: 1.5rem;
+            font-weight: normal;
+            color: #1c1e21;
+        }
+
+        /* ID selector (#) */
+        #main-header {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #dddfe2;
+        }
+
+        #promo-section {
+            flex: 1;
+            padding: 40px;
+        }
+
+        #login-section {
+            flex: 0 0 400px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1), 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 40px;
+        }
+
+        #page-footer {
+            background-color: #fff;
+            padding: 20px;
+            border-top: 1px solid #dddfe2;
+            font-size: 0.8rem;
+            color: #8a8d91;
+        }
+
+        /* Class selctor (.) */
+        .container {
+            display: flex;
+            max-width: 1100px;
+            margin: 0 auto;
+            align-items: center;
+            min-height: 70vh;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .btn-login {
+            background-color: #1877f2;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 12px;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .btn-create {
+            background-color: #42b72a;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 12px 16px;
+            display: inline-block;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .footer-nav {
+            margin-bottom: 10px;
+        }
+
+        .lang-nav ul, .product-nav ul, .policy-nav ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* (>) chỉ chọn con trực tiếp */
+        #login-section > h2 {
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        
+        /* ( ) chọn mọi cấp con cháu */
+        footer a {
+            color: #8a8d91;
+            text-decoration: none;
+        }
+
+        #promo-section figure img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        /* (+) phần tử ngay sau */
+        h2 + form {
+            margin-top: 10px;
+            /* Form nằm ngay sau h2 */
+        }
+        hr + .form-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        /* (~) mọi phần tử anh em sau */
+        nav ~ nav {
+            margin-top: 8px;
+        }
+
+        /* === Atribute selector === */
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #dddfe2;
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #1877f2;
+            box-shadow: 0 0 0 2px #e7f3ff;
+        }
+
+        /* pseduo class */
+        .btn-login:hover {
+            background-color: #166fe5;
+        }
+
+        .btn-create:hover {
+            background-color: #36a420;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+        footer a:hover {
+            text-decoration: underline;
+            color: #1877f2;
+        }
+
+        /* :first-child */
+        .lang-nav li:first-child {
+            font-weight: bold;
+            color: #1c1e21;
+        }
+
+        label {
+            display: none;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #606770;
+            margin-top: 10px;
+        }
+
+        #page-footer p {
+            margin-top: 15px;
+            color: #8a8d91;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #dadde1;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <table width="100%" cellpadding="20">
-        <tr>
-            <!--Phần bên trái-->
-            <td width="65%" align="center">
-                <p>ⓕ</p>
-                <h3>Khám phá những điều bạn yêu thích.</h3>
-                
-                <img src="img\HpEiFYDux5j.webp" alt="Banner Facebook" width="600">
-            </td>
+    <!-- Header với ID-->
+    <header id="main-header">
+        <h1>Facebook</h1>
+    </header>
 
-            <td width="35%">
-                <h1>Facebook</h1>
-                <h2>Đăng Nhập vào Facebook</h2>
+    <main class="container">
+        <!-- Section promo với ID + class -->
+        <section id="promo-section" class="promo">
+            <h2>Facebook giúp bạn kết nối và chia sẻ với mọi người trong cuộc sống của bạn.</h2>
+            <figure>
+                <img src="img/HpEiFYDux5j.webp" alt="Hình ảnh kết nối bạn bè trên Facebook" width="600">
+                <figcaption>Kết nối với bạn bè và thế giới xung quanh bạn trên Facebook.</figcaption>
+            </figure>
+        </section>
 
-                <form action="#">
-                    <label for="email">Email hoặc số di động</label>
-                    <br>
+        <!-- Section form đăng nhập với ID + class -->
+        <section id="login-section" class="login-form">
+            <h2>Đăng nhập vào Facebook</h2>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <label for="email">Email hoặc số điện thoại</label>
+                    <input type="text" id="email" name="email" placeholder="Email hoặc số điện thoại" required>
+                </div>
 
-                    <input id="email" type="text" size="40">
-                    <br><br>
-
+                <div   class="form-group">
                     <label for="password">Mật khẩu</label>
-                    <br>
-                    <input type="password" id="password" size="40">
-                    <br><br>
-                    <button style="background-color: blue;">Đăng nhập</button>
-                    <br><br>
-                    <button>Quên mật khẩu?</button>
-                    <br><br>
-                    <button style="background-color: white; color: blue;">Tạo tài khoản mới</button>
-                </form>
-                
+                    <input type="password" id="password" name="password" placeholder="Mật khẩu" required>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn-login">Đăng nhập</button>
+                </div>
+
+                <div class="form-group">
+                    <a href="#" class="forgot-link">Quên mật khẩu?</a>
+                </div>
+
                 <hr>
-                
-                <p>
-                    Tiếng Việt | 
-                    <a href="#">English (UK)</a> |
-                    <a href="#">中文(台灣)</a> |
-                    <a href="#">한국어</a> |
-                    <a href="#">Français (France)</a> |
-                    <a href="#">ภาษาไทย</a> |
-                    <a href="#">Ngôn ngữ khác...</a>
-                </p>
 
-                <p>
-                    <a href="#">Đăng ký</a> |
-                    <a href="#">Đăng nhập</a> |
-                    <a href="#">Messenger</a> |
-                    <a href="#">Facebook Lite</a>|
-                    <a href="#">Video</a> |
-                    <a href="#">Meta Pay</a> |
-                    <a href="#">Cửa hàng trên Meta</a> |
-                    <a href="#">Meta Quest</a> |
-                    <a href="#">Ray-Ban Meta</a> |
-                    <a href="#">Meta AI</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">Threads</a> |
-                </p>
+                <div class="form-group">
+                    <a href="#" class="btn-create">Tạo tài khoản mới</a>
+                </div>
+            </form>
+        </section>
+    </main>
 
-                <p>
-                    <a href="#">Chính sách quyền riêng tư</a> |
-                    <a href="#">Trung tâm quyền riêng tư</a> |
-                    <a href="#">Giới thiệu</a> |
-                    <a href="#">Tạo quảng cáo</a> |
-                    <a href="#">Tạo trang</a> |
-                    <a href="#">Nhà phát triển</a> |
-                    <a href="#">Tuyển dụng</a> |
-                    <a href="#">Cookie</a> |
-                    <a href="#">Lựa chọn quảng cáo</a> |
-                </p>
+    <!-- Footer với ID-->
+    <footer id="page-footer">
+        <!-- Menu ngôn ngữ -->
+        <nav class="footer-nav lang-nav">
+            <ul>
+                <li>Tiếng Việt</li>
+                <li><a href="#">English (UK)</a></li>
+                <li><a href="#">中文(台灣)</a></li>
+                <li><a href="#">한국어</a></li>
+                <li><a href="#">Français (France)</a></li>
+                <li><a href="#">ภาษาไทย</a></li>
+                <li><a href="#">Ngôn ngữ khác...</a></li>
+            </ul>
+        </nav>
 
-                <p>
-                    <a href="#">Điều khoản</a> |
-                    <a href="#">Trợ giúp</a> |
-                    <a href="#">Tải thông tin liên hệ lên & đối tượng không tải người dùng</a> |
-                </p>
+        <hr>
 
-                <p> Meta © 2026 </p>
-            </td>
-        </tr>
-    </table>
+        <!-- Liên kết sản phẩm & dịch vụ -->
+        <nav class="footer-nav product-nav">
+            <ul>
+                <li><a href="#">Đăng ký</a></li>
+                <li><a href="#">Đăng nhập</a></li>
+                <li><a href="#">Messenger</a></li>
+                <li><a href="#">Facebook Lite</a></li>
+                <li><a href="#">Video</a></li>
+                <li><a href="#">Meta Pay</a></li>
+                <li><a href="#">Cửa hàng trên Meta</a></li>
+                <li><a href="#">Meta Quest</a></li>
+                <li><a href="#">Ray-Ban Meta</a></li>
+                <li><a href="#">Meta AI</a></li>
+                <li><a href="#">Instagram</a></li>
+                <li><a href="#">Threads</a></li>
+            </ul>
+        </nav>
+
+        <!-- Liên kết chính sách & hỗ trợ -->
+        <nav class="footer-nav policy-nav">
+            <ul>
+                <li><a href="#">Chính sách quyền riêng tư</a></li>
+                <li><a href="#">Trung tâm quyền riêng tư</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Tạo quảng cáo</a></li>
+                <li><a href="#">Tạo trang</a></li>
+                <li><a href="#">Nhà phát triển</a></li>
+                <li><a href="#">Tuyển dụng</a></li>
+                <li><a href="#">Cookie</a></li>
+                <li><a href="#">Lựa chọn quảng cáo</a></li>
+                <li><a href="#">Điều khoản</a></li>
+                <li><a href="#">Trợ giúp</a></li>
+                <li><a href="#">Tải thông tin liên hệ lên &amp; đối tượng không tải người dùng</a></li>
+            </ul>
+        </nav>
+
+        <p>Meta &copy; 2026</p>
+    </footer>
 </body>
 </html>
